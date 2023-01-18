@@ -22,7 +22,7 @@ h2 {
 }
 
 .title-header {
-    width: 670px;
+    max-width: 670px;
     height: 585px;
     border: 7px inset #fff;
     display: flex;
@@ -44,4 +44,17 @@ h2 {
     width: 64px;
     height: 64px;
     margin-top: 70px;
+}
+
+@media screen and (max-width: 700px) {
+    .container-header {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h1,
+    h2 {
+        font-size: 24px;
+    }
 }
