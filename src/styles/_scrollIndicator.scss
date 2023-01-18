@@ -1,0 +1,14 @@
+.progressbar-container {
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    height: 7px;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.progressbar {
+    height: 7px;
+    background: linear-gradient(90deg, rgba(0, 212, 255, 1) 0%, rgba(27, 107, 198, 1) 33%, rgba(2, 0, 36, 1) 100%);
+}

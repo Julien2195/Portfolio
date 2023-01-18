@@ -1,0 +1,38 @@
+.infos {
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+}
+
+.container-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.infos-description {
+    max-width: 500px;
+}
+
+.infos-description h3 {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+}
+
+.infos-description p {
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.infos-picture img {
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
