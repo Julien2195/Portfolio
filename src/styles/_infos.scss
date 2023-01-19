@@ -1,16 +1,14 @@
 .infos {
-    background-color: #fff;
+    position: relative;
+    background-color: rgb(255, 210, 86);
     width: 100%;
-    height: auto;
-    padding: 50px 0;
+    height: 100vh;
+    padding: 0;
 }
 
 .container-infos {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 120px auto;
     padding: 0 10px;
 }
 
@@ -24,22 +22,33 @@
     text-transform: uppercase;
 }
 
-.infos-description p {
-    font-family: "Montserrat", sans-serif;
-    line-height: 1.4;
-    text-transform: uppercase;
-    font-weight: 500;
+.infos-picture {
+    position: absolute;
+    right: 400px;
+    top: 300px;
 }
 
 .infos-picture img {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
     border: 1px solid black;
     border-radius: 50%;
+}
+
+.container-title-infos {
+    text-align: center;
 }
 
 @media screen and (max-width: 800px) {
     .container-infos {
         flex-direction: column-reverse;
     }
+}
+
+.index-module_type__E-SaG {
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.4;
+    font-weight: 500;
 }

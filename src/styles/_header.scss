@@ -1,5 +1,4 @@
 header {
-    background: url("../assets/background2.jpg") no-repeat;
     width: 100%;
     height: 100vh;
     background-size: cover;
@@ -7,24 +6,35 @@ header {
     display: flex;
 }
 
-h1,
+h1 {
+    text-transform: uppercase;
+}
+
+.title-header h1,
 h2 {
     color: #fff;
     margin: 0;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-size: 2.6em;
-    font-weight: normal;
+    font-weight: 500;
+    line-height: 1.8;
 }
 
 h2 {
     margin-top: 15px;
 }
 
+h1 span,
+h2 span {
+    color: red;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
 .title-header {
-    max-width: 670px;
+    max-width: 560px;
     height: 585px;
-    border: 7px inset #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,6 +54,28 @@ h2 {
     width: 64px;
     height: 64px;
     margin-top: 70px;
+}
+
+.mouse-down {
+    position: absolute;
+    bottom: 100px;
+    font-size: 40px;
+    color: #fff;
+    animation: slide-top 0.5s ease-in-out infinite alternate;
+    cursor: pointer;
+}
+
+.mouse-down:hover {
+    animation: none;
+}
+
+@keyframes slide-top {
+    0% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 @media screen and (max-width: 700px) {
