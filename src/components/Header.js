@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useRef } from "react";
 import { CgMouse } from "react-icons/cg";
+
 const Header = () => {
   const targetRef = useRef(null);
   function handleClick() {

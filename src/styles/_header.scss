@@ -1,6 +1,6 @@
 header {
     width: 100%;
-    height: 100vh;
+    height: 1100px;
     background-size: cover;
     position: relative;
     display: flex;
@@ -33,13 +33,14 @@ h2 span {
 }
 
 .title-header {
-    max-width: 560px;
+    max-width: 470px;
     height: 585px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 0 20px;
     align-items: center;
+    word-spacing: 8px;
 }
 
 .container-header {
@@ -58,8 +59,9 @@ h2 span {
 
 .mouse-down {
     position: absolute;
+    left: 50%;
     bottom: 100px;
-    font-size: 40px;
+    font-size: 48px;
     color: #fff;
     animation: slide-top 0.5s ease-in-out infinite alternate;
     cursor: pointer;
