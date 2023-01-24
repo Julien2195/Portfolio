@@ -5,9 +5,11 @@ import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import "aos/dist/aos.css";
 import { CgMouse } from "react-icons/cg";
+
 const Infos = () => {
   const targetRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [completed, setCompleted] = useState(0);
   const [ref, inView] = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -15,6 +17,12 @@ const Infos = () => {
   function handleClick() {
     targetRef.current.scrollIntoView({ behavior: "smooth" });
   }
+  const testData = [
+    { bgcolor: "#6a1b9a", completed: 60 },
+    { bgcolor: "#00695c", completed: 30 },
+    { bgcolor: "#ef6c00", completed: 53 },
+  ];
+
   useEffect(() => {
     setIsVisible(inView);
   }, [inView]);
@@ -41,7 +49,6 @@ const Infos = () => {
           </div>
         </div>
       </div>
-      <CgMouse onClick={handleClick} className="mouse-down" />
     </div>
   );
 };

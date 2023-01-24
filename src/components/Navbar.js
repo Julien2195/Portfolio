@@ -3,6 +3,10 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [navBar, setNavBar] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const togglenav = () => {
+    setIsActive(!isActive);
+  };
   const liNav = [
     {
       id: 1,
@@ -26,7 +30,7 @@ const Navbar = () => {
     },
   ];
   const changeBackground = () => {
-    if (window.scrollY >= 800) {
+    if (window.scrollY >= 1500) {
       setNavBar(true);
     } else {
       setNavBar(false);
@@ -46,8 +50,25 @@ const Navbar = () => {
             <li key={i}>{x.name}</li>
           ))}
         </ul>
-        <button>
+        <button
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+        >
           <FaBars />
+          {isActive ? (
+            <div className="container-responsive">
+              <FaTimes />
+              {liNav.map((x, i) => (
+                <li className="responsive-menu" key={i}>
+                  {x.name}
+                </li>
+              ))}
+              <li></li>
+            </div>
+          ) : (
+            ""
+          )}
         </button>
       </div>
     </nav>
