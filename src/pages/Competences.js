@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const Competences = () => {
   const nameCompetencesFront = [
@@ -65,40 +66,63 @@ const Competences = () => {
       percent: 65,
     },
   ];
+  const [isVisible, setIsVisible] = useState(false);
+  const [ref, inView] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    setIsVisible(inView);
+  }, [inView]);
   return (
     <div className="competences-main">
       <div className="competences-container">
         <div className="competences">
           <h3>Compétences</h3>
           {/* ////////////FRONTEND//////////// */}
-          <span className="tooltip front">Hard Skills</span>
-          <div className="skills-box">
-            {nameCompetencesFront.map((x) => (
-              <div className="box">
-                <span className="title">{x.name}</span>
+          <div className="front-container">
+            <span className="tooltip front">Hard Skills</span>
+            <div ref={ref}>
+              {isVisible && (
+                <div className="skills-box">
+                  {nameCompetencesFront.map((x) => (
+                    <div className="box">
+                      <span className="title">{x.name}</span>
 
-                <div className="skill-bar">
-                  <span className={`skill-per ${x.name.toLocaleLowerCase()}`}>
-                    <span className="tooltip">{`${x.percent}%`}</span>
-                  </span>
+                      <div className="skill-bar">
+                        <span
+                          className={`skill-per ${x.name.toLocaleLowerCase()}`}
+                        >
+                          <span className="tooltip">{`${x.percent}%`}</span>
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
-            ))}
+              )}
+            </div>
           </div>
           {/* //////////BACKEND///////////// */}
-          <span className="tooltip back">Soft Skills</span>
-          <div className="skills-box">
-            {nameCompetencesSoft.map((x) => (
-              <div className="box">
-                <span className="title">{x.name}</span>
+          <div className="back-container">
+            <span className="tooltip back">Soft Skills</span>
+            {isVisible && (
+              <div className="skills-box responsive">
+                {nameCompetencesSoft.map((x) => (
+                  <div className="box">
+                    <span className="title">{x.name}</span>
 
-                <div className="skill-bar">
-                  <span className={`skill-per ${x.name.toLocaleLowerCase()}`}>
-                    <span className="tooltip">{`${x.percent}%`}</span>
-                  </span>
-                </div>
+                    <div className="skill-bar">
+                      <span
+                        className={`skill-per ${x.name.toLocaleLowerCase()}`}
+                      >
+                        <span className="tooltip">{`${x.percent}%`}</span>
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         </div>
         {/* CV */}
