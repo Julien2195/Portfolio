@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect } from "react";
 import { CgMouse } from "react-icons/cg";
-import videobg from "../assets/videobg.mp4";
 import { TypeAnimation } from "react-type-animation";
 
 const Header = () => {
@@ -16,7 +15,6 @@ const Header = () => {
   return (
     <header>
       <div className="overlay"></div>
-      <video src={videobg} autoPlay loop muted />
       <div className="videobg-container">
         <TypeAnimation
           sequence={[
