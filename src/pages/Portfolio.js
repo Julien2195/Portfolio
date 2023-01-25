@@ -1,6 +1,6 @@
 import axios from "axios";
 import { React, useState, useEffect } from "react";
-
+import loupe from "../assets/magnifying-glass.png";
 const Portfolio = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -9,7 +9,7 @@ const Portfolio = () => {
     [];
   return (
     <div className="portfolio-container">
-      <h2>Mes travaux </h2>
+      <h2>Portfolio</h2>
       <div className="portfolio">
         {data.map((x) => (
           <div key={x.id} className="portfolio-box">
