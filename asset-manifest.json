@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Portfolio/static/css/main.1037ab4e.css",
-    "main.js": "/Portfolio/static/js/main.96de2920.js",
+    "main.js": "/Portfolio/static/js/main.8ef5e738.js",
     "static/media/picwish.png": "/Portfolio/static/media/picwish.eb446695f1f7c572feea.png",
     "static/media/magnifying-glass.png": "/Portfolio/static/media/magnifying-glass.d1d5a937bc29237ed717.png",
     "index.html": "/Portfolio/index.html"
   },
   "entrypoints": [
     "static/css/main.1037ab4e.css",
-    "static/js/main.96de2920.js"
+    "static/js/main.8ef5e738.js"
   ]
 }
