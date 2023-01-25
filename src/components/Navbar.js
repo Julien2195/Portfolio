@@ -16,21 +16,18 @@ const Navbar = () => {
       id: 2,
       name: "Compétences",
     },
+
     {
       id: 3,
-      name: "Dîplomes",
-    },
-    {
-      id: 4,
       name: "Portfolio",
     },
     {
-      id: 5,
+      id: 4,
       name: "Contact",
     },
   ];
   const changeBackground = () => {
-    if (window.scrollY >= 800) {
+    if (window.scrollY >= 740) {
       setNavBar(true);
     } else {
       setNavBar(false);
