@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import profilePic from "../assets/picwish.png";
-import Navbar from "../components/Navbar";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import "aos/dist/aos.css";
