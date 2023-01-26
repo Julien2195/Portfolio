@@ -51,7 +51,7 @@
         display: block;
         height: 100%;
         border-radius: 6px;
-        animation: progressSkillBar 3s ease-in-out 2s forwards;
+        animation: progressSkillBar 3s ease-in-out 0.2s forwards;
         background: linear-gradient(90deg, rgba(255, 152, 67, 1) 0%, rgba(228, 51, 51, 1) 41%, rgba(150, 19, 19, 1) 100%);
         ;
     }
@@ -202,6 +202,9 @@
     .competences {
         width: 100%;
     }
+    .competences-main {
+        padding-bottom: 100px;
+    }
     .skills-box {
         border-radius: 0;
         min-width: 320px;
@@ -239,7 +242,7 @@
     }
     .cv {
         border-radius: 0;
-        width: 100%;
+        width: 320px;
         border: none;
     }
 }

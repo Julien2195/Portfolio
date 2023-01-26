@@ -9,11 +9,11 @@
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     margin: 0;
-    padding: 100px 0 50px 0;
+    padding: 100px 10px 50px 10px;
     font-weight: 500;
     letter-spacing: 8px;
     text-shadow: 2px 2px 2px rgb(78, 45, 45);
-    font-size: 78px;
+    font-size: 4.8em;
 }
 
 .portfolio {
@@ -99,6 +99,9 @@
 @media screen and (max-width:600px) {
     .portfolio {
         grid-template-columns: repeat(auto-fill, 320px);
+    }
+    .portfolio-container h2 {
+        font-size: 2em;
     }
     .overlay-image img {
         width: 320px;

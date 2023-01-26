@@ -3,10 +3,10 @@ import { React, useState, useEffect } from "react";
 import loupe from "../assets/magnifying-glass.png";
 const Portfolio = () => {
   const [data, setData] = useState([]);
+
   useEffect(() => {
     axios.get("/portfolio.json").then((res) => setData(res.data));
-  }),
-    [];
+  }, []);
   return (
     <div className="portfolio-container">
       <h2>Portfolio</h2>

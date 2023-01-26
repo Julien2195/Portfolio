@@ -1,29 +1,31 @@
 import React, { useState, useRef } from "react";
+import { useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const [navBar, setNavBar] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const togglenav = () => {
-    setIsActive(!isActive);
-  };
   const liNav = [
     {
       id: 1,
       name: "A propos de moi",
+      class: "about-nav",
     },
     {
       id: 2,
       name: "Compétences",
+      class: "competences-nav",
     },
 
     {
       id: 3,
       name: "Portfolio",
+      class: "portfolio-nav",
     },
     {
       id: 4,
       name: "Contact",
+      class: "contact-nav",
     },
   ];
   const changeBackground = () => {
@@ -34,9 +36,7 @@ const Navbar = () => {
     }
   };
   const navRef = useRef();
-  const showNavBar = () => {
-    navRef.current.classList.toggle("responsive-nav");
-  };
+
   window.addEventListener("scroll", changeBackground);
   return (
     <nav className={navBar ? "navbar active" : "navbar"} ref={navRef}>
@@ -44,29 +44,25 @@ const Navbar = () => {
         <h1>Julien LEMAITRE</h1>
         <ul className="nav-deskop">
           {liNav.map((x, i) => (
-            <li key={i}>{x.name}</li>
+            <li key={i} ref={navRef} className={x.class}>
+              {x.name}
+            </li>
           ))}
         </ul>
-        <button
-          onClick={() => {
-            setIsActive(!isActive);
-          }}
-        >
-          <FaBars />
-          {isActive ? (
-            <div className="container-responsive">
-              <FaTimes />
-              {liNav.map((x, i) => (
-                <li className="responsive-menu" key={i}>
-                  {x.name}
-                </li>
-              ))}
-              <li></li>
-            </div>
-          ) : (
-            ""
-          )}
+        <button onClick={() => setIsActive(!isActive)}>
+          {isActive ? <FaTimes /> : <FaBars />}
         </button>
+        {isActive ? (
+          <div className="container-responsive">
+            {liNav.map((x, i) => (
+              <li className="responsive-menu" key={i}>
+                {x.name}
+              </li>
+            ))}
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </nav>
   );
