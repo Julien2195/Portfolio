@@ -1,0 +1,23 @@
+.contact {
+    background-color: #1f1f1f;
+    width: 100%;
+    height: auto;
+}
+
+form {
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+form input,
+textarea {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact p {
+    margin: 0;
+    color: #fff;
+    text-align: center;
+}

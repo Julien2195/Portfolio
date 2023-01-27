@@ -3,6 +3,9 @@ import { React, useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import { useInView } from "react-intersection-observer";
 const Portfolio = () => {
   const settings = {
     dots: true,
@@ -47,35 +50,54 @@ const Portfolio = () => {
       },
     ],
   };
+  const [isVisiblePortfolio, setIsVisiblePortfolio] = useState(false);
+  const [ref, inView] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
   const [data, setData] = useState([]);
-
+  AOS.init();
   useEffect(() => {
     axios.get("/portfolio.json").then((res) => setData(res.data));
   }, []);
+  useEffect(() => {
+    setIsVisiblePortfolio(inView);
+  }, [inView]);
   return (
     <div className="portfolio-container">
       <h2>Portfolio</h2>
       <div className="portfolio">
-        <Slider {...settings}>
-          {data.map((x) => (
-            <div key={x.id} className="portfolio-box">
-              <div className="overlay-image">
-                <div className="block">
-                  <img src={x.img} alt="" />
-                </div>
-                <div className="hover">
-                  <div className="tags-container">
-                    {x.tags.map((tag, i) => (
-                      <span className="tags" key={i}>{`#${tag}`}</span>
-                    ))}
-                  </div>
+        <div ref={ref}>
+          {isVisiblePortfolio && (
+            <div
+              data-aos="zoom-in"
+              data-aos-easing="ease-in-out"
+              data-aos-once="true"
+              data-aos-duration="700"
+            >
+              <Slider {...settings}>
+                {data.map((x) => (
+                  <div key={x.id} className="portfolio-box">
+                    <div className="overlay-image">
+                      <div className="block">
+                        <img src={x.img} alt="" />
+                      </div>
+                      <div className="hover">
+                        <div className="tags-container">
+                          {x.tags.map((tag, i) => (
+                            <span className="tags" key={i}>{`#${tag}`}</span>
+                          ))}
+                        </div>
 
-                  <h3>{x.name}</h3>
-                </div>
-              </div>
+                        <h3>{x.name}</h3>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </Slider>
             </div>
-          ))}
-        </Slider>
+          )}
+        </div>
       </div>
     </div>
   );

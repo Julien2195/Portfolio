@@ -3,10 +3,6 @@ import { useInView } from "react-intersection-observer";
 import "aos/dist/aos.css";
 import AOS from "aos";
 const Competences = () => {
-  const targetRef = useRef(null);
-  function handleClick() {
-    targetRef.current.scrollIntoView({ behavior: "smooth" });
-  }
   const nameCompetencesFront = [
     {
       id: 1,
@@ -92,8 +88,9 @@ const Competences = () => {
               <div className="front-container">
                 <span className="tooltip front">Hard Skills</span>
                 <div
-                  data-aos="flip-left"
-                  data-aos-duration="1000"
+                  className="aos-flip"
+                  data-aos="zoom-in"
+                  data-aos-duration="500"
                   data-aos-easing="ease-in-out"
                   data-aos-once="true"
                 >
@@ -119,8 +116,9 @@ const Competences = () => {
               <div className="back-container">
                 <span className="tooltip back">Soft Skills</span>
                 <div
-                  data-aos="flip-left"
-                  data-aos-duration="1000"
+                  className="aos-flip"
+                  data-aos="zoom-in"
+                  data-aos-duration="500"
                   data-aos-easing="ease-in-out"
                   data-aos-once="true"
                 >
@@ -145,8 +143,9 @@ const Competences = () => {
 
             {/* CV */}
             <div
-              data-aos="flip-left"
-              data-aos-duration="1000"
+              className="aos-flip"
+              data-aos="zoom-in"
+              data-aos-duration="700"
               data-aos-easing="ease-in-out"
               data-aos-once="true"
             >
