@@ -1,38 +1,83 @@
-import React from "react";
-
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { FaUserAlt } from "react-icons/fa";
+import { MdAlternateEmail } from "react-icons/md";
+import { IoMdMail } from "react-icons/io";
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_d14htwr",
+        "template_cd45ygn",
+        form.current,
+        "TPr1yuj927cvTT8mF"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
   return (
     <div className="contact">
-      <form
-        name="contact"
-        method="post"
-        className="contact__form"
-        data-netlify="true"
-        onsubmit="true"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p className="contact-text">
-          <label>
-            Your Name: <input type="text" name="name" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Your Email: <input type="email" name="email" />
-          </label>
-        </p>
-        <p>
-          <label>
-            Message: <textarea name="message"></textarea>
-          </label>
-        </p>
-        <p>
-          <button type="submit">Send</button>
-        </p>
-      </form>
-      ,
+      <div className="contact-container">
+        <h3>Contact</h3>
+        <form ref={form} onSubmit={sendEmail}>
+          <div className="box-container">
+            <div className="box-un">
+              <div>
+                <label>
+                  <FaUserAlt className="colorContactIcon" />
+                  Nom et prenom:
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nom et prénom"
+                  required={true}
+                />
+              </div>
+
+              <div className="email">
+                <label className="email">
+                  <MdAlternateEmail className="colorContactIcon" />
+                  Email:
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required={true}
+                />
+              </div>
+            </div>
+            <div className="message-box">
+              <label>
+                <div>
+                  <IoMdMail className="colorContactIcon" />
+                </div>
+                <div>Message:</div>
+              </label>
+              <textarea
+                name="message"
+                placeholder="Message..."
+                required={true}
+              />
+            </div>
+          </div>
+          <div className="submit">
+            <input type="submit" value="Envoyer" />
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
-
 export default Contact;

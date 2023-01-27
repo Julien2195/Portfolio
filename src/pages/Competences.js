@@ -77,87 +77,88 @@ const Competences = () => {
     setIsVisible(inView);
   }, [inView]);
   return (
-    <div className="competences-main">
-      <div ref={ref}>
-        {isVisible && (
-          <div className="competences-container">
-            <div className="competences">
-              <h3>Compétences</h3>
-              {/* ////////////FRONTEND//////////// */}
+    <div className="competences-container">
+      <h3>Compétences</h3>
+      <div className="competences-main">
+        <div ref={ref}>
+          {isVisible && (
+            <div className="competences-box">
+              <div className="competences">
+                {/* ////////////FRONTEND//////////// */}
 
-              <div className="front-container">
-                <span className="tooltip front">Hard Skills</span>
-                <div
-                  className="aos-flip"
-                  data-aos="zoom-in"
-                  data-aos-duration="500"
-                  data-aos-easing="ease-in-out"
-                  data-aos-once="true"
-                >
-                  <div className="skills-box">
-                    {nameCompetencesFront.map((x) => (
-                      <div key={x.name} className="box">
-                        <span className="title">{x.name}</span>
+                <div className="front-container">
+                  <span className="tooltip front">Hard Skills</span>
+                  <div
+                    className="aos-flip"
+                    data-aos="zoom-in"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true"
+                  >
+                    <div className="skills-box">
+                      {nameCompetencesFront.map((x) => (
+                        <div key={x.name} className="box">
+                          <span className="title">{x.name}</span>
 
-                        <div className="skill-bar">
-                          <span
-                            className={`skill-per ${x.name.toLocaleLowerCase()}`}
-                          >
-                            <span className="tooltip">{`${x.percent}%`}</span>
-                          </span>
+                          <div className="skill-bar">
+                            <span
+                              className={`skill-per ${x.name.toLocaleLowerCase()}`}
+                            >
+                              <span className="tooltip">{`${x.percent}%`}</span>
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {/* //////////BACKEND///////////// */}
+
+                <div className="back-container">
+                  <span className="tooltip back">Soft Skills</span>
+                  <div
+                    className="aos-flip"
+                    data-aos="zoom-in"
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out"
+                    data-aos-once="true"
+                  >
+                    <div className="skills-box">
+                      {nameCompetencesSoft.map((x) => (
+                        <div key={x.name} className="box">
+                          <span className="title">{x.name}</span>
+
+                          <div className="skill-bar">
+                            <span
+                              className={`skill-per ${x.name.toLocaleLowerCase()}`}
+                            >
+                              <span className="tooltip">{`${x.percent}%`}</span>
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-              {/* //////////BACKEND///////////// */}
 
-              <div className="back-container">
-                <span className="tooltip back">Soft Skills</span>
-                <div
-                  className="aos-flip"
-                  data-aos="zoom-in"
-                  data-aos-duration="500"
-                  data-aos-easing="ease-in-out"
-                  data-aos-once="true"
-                >
-                  <div className="skills-box">
-                    {nameCompetencesSoft.map((x) => (
-                      <div key={x.name} className="box">
-                        <span className="title">{x.name}</span>
-
-                        <div className="skill-bar">
-                          <span
-                            className={`skill-per ${x.name.toLocaleLowerCase()}`}
-                          >
-                            <span className="tooltip">{`${x.percent}%`}</span>
-                          </span>
-                        </div>
-                      </div>
-                    ))}
+              {/* CV */}
+              <div
+                className="aos-flip"
+                data-aos="zoom-in"
+                data-aos-duration="700"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+              >
+                <div className="cv-container">
+                  <div className="cv">
+                    <span>CV EN COURS</span>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* CV */}
-            <div
-              className="aos-flip"
-              data-aos="zoom-in"
-              data-aos-duration="700"
-              data-aos-easing="ease-in-out"
-              data-aos-once="true"
-            >
-              <div className="cv-container">
-                <h3>Curriculum vitae</h3>
-                <div className="cv">
-                  <span>CV EN COURS</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

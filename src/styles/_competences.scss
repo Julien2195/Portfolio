@@ -1,22 +1,43 @@
-.competences-main {
-    width: 100%;
-    height: auto;
+// .competences-main {
+//     width: 100%;
+//     height: auto;
+//     background-color: #1f1f1f;
+// }
+.competences-container {
     background-color: #1f1f1f;
+    height: auto;
+    width: 100%;
+}
+
+.competences-container h3 {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 0 10px 50px 10px;
+    font-weight: 500;
+    letter-spacing: 18px;
+    text-shadow: 2px 2px 2px rgb(78, 45, 45);
+    font-size: 4.8em;
+    border-bottom: 4px solid #ffbb33;
+    max-width: 1050px;
+    text-align: center;
 }
 
 .competences {
     position: relative;
 }
 
-.competences-container {
+.competences-box {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 1550px;
-    margin: 0 auto;
+    margin: 65px auto 0 auto;
+    align-items: center;
 }
 
-.competences-container h3 {
+.competences-box h3 {
     font-family: "Roboto", sans-serif;
     font-size: 2.2em;
     font-weight: 400;
@@ -92,7 +113,7 @@
 .tooltip.front {
     position: absolute;
     left: 150px;
-    top: 112px;
+    top: 35px;
     font-size: 24px;
     font-weight: 500;
     color: #fff;
@@ -117,7 +138,7 @@
 .tooltip.back {
     position: absolute;
     left: 150px;
-    top: 676px;
+    top: 597px;
     font-size: 24px;
     font-weight: 500;
     color: #fff;
@@ -187,7 +208,7 @@
 }
 
 @media screen and (max-width: 1193px) {
-    .competences-container {
+    .competences-box {
         justify-content: center;
     }
     .cv-container h3 {
@@ -198,9 +219,16 @@
     }
 }
 
+@media screen and (max-width: 700px) {
+    .competences-container h3 {
+        font-size: 2em;
+    }
+}
+
 @media screen and (max-width: 600px) {
     .competences {
         width: 100%;
+        margin-bottom: 50px;
     }
     .competences-main {
         padding-bottom: 100px;
@@ -247,6 +275,12 @@
     }
     .aos-flip {
         transform: none!important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .competences-container h3 {
+        font-size: 18px;
     }
 }
 
