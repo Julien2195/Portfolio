@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import { CgMouse } from "react-icons/cg";
 import "aos/dist/aos.css";
 import AOS from "aos";
 const Competences = () => {
@@ -161,7 +160,6 @@ const Competences = () => {
           </div>
         )}
       </div>
-      <CgMouse onClick={handleClick} className="mouse-down competences" />
     </div>
   );
 };
