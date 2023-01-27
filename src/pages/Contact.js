@@ -11,7 +11,7 @@ const Contact = () => {
         onsubmit="true"
       >
         <input type="hidden" name="form-name" value="contact" />
-        <p className="contact-text">
+        <p className="contact-tex">
           <label>
             Your Name: <input type="text" name="name" />
           </label>
