@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import profilePic from "../assets/picwish.png";
+// import profilePic from "../assets/picwish.png";
 import { TypeAnimation } from "react-type-animation";
 import { useInView } from "react-intersection-observer";
 import "aos/dist/aos.css";
@@ -46,7 +46,7 @@ const Infos = () => {
             </p>
           </div>
           <div className="infos-picture">
-            <img src={profilePic} alt="Photo de profil" />
+            {/* <img src={profilePic} alt="Photo de profil" /> */}
           </div>
         </div>
       </div>
