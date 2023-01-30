@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import "aos/dist/aos.css";
 import AOS from "aos";
+import Timeline from "../components/Timeline";
 const Competences = () => {
   const nameCompetencesFront = [
     {
@@ -29,9 +30,11 @@ const Competences = () => {
       name: "WORDPRESS",
       percent: 50,
     },
+  ];
+  const nameCompetencesBack = [
     {
       id: 1,
-      name: "NODEJS",
+      name: "NODE",
       percent: 70,
     },
     {
@@ -79,85 +82,70 @@ const Competences = () => {
   return (
     <div className="competences-container">
       <h3>Compétences</h3>
-      <div className="competences-main">
-        <div ref={ref}>
-          {isVisible && (
-            <div className="competences-box">
-              <div className="competences">
-                {/* ////////////FRONTEND//////////// */}
+      <div className="competences-main" ref={ref}>
+        {isVisible && (
+          <div className="competences">
+            {/* ////////////FRONTEND//////////// */}
 
-                <div className="front-container">
-                  <span className="tooltip front">Hard Skills</span>
-                  <div
-                    className="aos-flip"
-                    data-aos="zoom-in"
-                    data-aos-duration="500"
-                    data-aos-easing="ease-in-out"
-                    data-aos-once="true"
-                  >
-                    <div className="skills-box">
-                      {nameCompetencesFront.map((x) => (
-                        <div key={x.name} className="box">
-                          <span className="title">{x.name}</span>
-
-                          <div className="skill-bar">
-                            <span
-                              className={`skill-per ${x.name.toLocaleLowerCase()}`}
-                            >
-                              <span className="tooltip">{`${x.percent}%`}</span>
-                            </span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                {/* //////////BACKEND///////////// */}
-
-                <div className="back-container">
-                  <span className="tooltip back">Soft Skills</span>
-                  <div
-                    className="aos-flip"
-                    data-aos="zoom-in"
-                    data-aos-duration="500"
-                    data-aos-easing="ease-in-out"
-                    data-aos-once="true"
-                  >
-                    <div className="skills-box">
-                      {nameCompetencesSoft.map((x) => (
-                        <div key={x.name} className="box">
-                          <span className="title">{x.name}</span>
-
-                          <div className="skill-bar">
-                            <span
-                              className={`skill-per ${x.name.toLocaleLowerCase()}`}
-                            >
-                              <span className="tooltip">{`${x.percent}%`}</span>
-                            </span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* CV */}
+            <div className="front-container">
               <div
                 className="aos-flip"
                 data-aos="zoom-in"
-                data-aos-duration="700"
+                data-aos-duration="500"
                 data-aos-easing="ease-in-out"
                 data-aos-once="true"
               >
-                <div className="cv-container">
-                  <div className="cv">
-                    <span>CV EN COURS</span>
-                  </div>
+                <div className="skills-box">
+                  <h4>Front end </h4>
+                  {nameCompetencesFront.map((x) => (
+                    <div key={x.name} className="box">
+                      <span className="title">{x.name}</span>
+
+                      <div className="skill-bar">
+                        <span
+                          className={`skill-per ${x.name.toLocaleLowerCase()}`}
+                        >
+                          <span className="tooltip">{`${x.percent}%`}</span>
+                        </span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
-          )}
+            {/* //////////BACKEND///////////// */}
+
+            <div className="back-container">
+              <div
+                className="aos-flip"
+                data-aos="zoom-in"
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+              >
+                <div className="skills-box">
+                  <h4>Back end </h4>
+                  {nameCompetencesBack.map((x) => (
+                    <div key={x.name} className="box">
+                      <span className="title">{x.name}</span>
+
+                      <div className="skill-bar">
+                        <span
+                          className={`skill-per ${x.name.toLocaleLowerCase()}`}
+                        >
+                          <span className="tooltip">{`${x.percent}%`}</span>
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="cv-container">
+          <Timeline />
         </div>
       </div>
     </div>

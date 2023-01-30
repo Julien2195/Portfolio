@@ -29,7 +29,7 @@ const Navbar = () => {
     },
   ];
   const changeBackground = () => {
-    if (window.scrollY >= 740) {
+    if (window.scrollY >= 10) {
       setNavBar(true);
     } else {
       setNavBar(false);
@@ -38,6 +38,7 @@ const Navbar = () => {
   const navRef = useRef();
 
   window.addEventListener("scroll", changeBackground);
+
   return (
     <nav className={navBar ? "navbar active" : "navbar"} ref={navRef}>
       <div className="nav-container">

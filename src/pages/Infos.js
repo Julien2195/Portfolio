@@ -17,7 +17,7 @@ const Infos = () => {
     setIsVisible(inView);
   }, [inView]);
   return (
-    <div ref={targetRef} className="infos">
+    <div id="ancre-infos" ref={targetRef} className="infos">
       <div id="target"></div>
       <div className="container-infos">
         <h3>A propos de moi </h3>

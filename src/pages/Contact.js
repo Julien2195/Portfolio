@@ -35,7 +35,7 @@ const Contact = () => {
               <div>
                 <label>
                   <FaUserAlt className="colorContactIcon" />
-                  Nom et prenom:
+                  Nom et prenom
                 </label>
                 <input
                   type="text"
@@ -48,7 +48,7 @@ const Contact = () => {
               <div className="email">
                 <label className="email">
                   <MdAlternateEmail className="colorContactIcon" />
-                  Email:
+                  Email
                 </label>
                 <input
                   type="email"
@@ -63,7 +63,7 @@ const Contact = () => {
                 <div>
                   <IoMdMail className="colorContactIcon" />
                 </div>
-                <div>Message:</div>
+                <div>Message</div>
               </label>
               <textarea
                 name="message"

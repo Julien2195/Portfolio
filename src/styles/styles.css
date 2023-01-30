@@ -95,7 +95,7 @@ h2 span {
 .mouse-down {
   position: absolute;
   left: 50%;
-  bottom: 100px;
+  bottom: 60px;
   font-size: 48px;
   color: #fff;
   -webkit-animation: slide-top 0.5s ease-in-out infinite alternate;
@@ -125,11 +125,19 @@ h2 span {
     padding: 10px;
   }
   .custom-typing {
-    max-width: 400px;
+    max-width: 600px;
+    width: 80%;
     padding: 0 10px;
+  }
+  .mouse-down {
+    font-size: 30px;
+    bottom: 40px;
   }
 }
 @media screen and (max-width: 400px) {
+  .index-module_type__E-SaG {
+    font-size: 18px !important;
+  }
   h1,
 h2 {
     font-size: 24px;
@@ -218,11 +226,11 @@ nav button {
     background-color: #000;
     left: 0;
     top: 80px;
-    -webkit-animation: slide-top 0.3s forwards;
-            animation: slide-top 0.3s forwards;
+    -webkit-animation: slide 0.3s forwards;
+            animation: slide 0.3s forwards;
     width: 100%;
   }
-  @-webkit-keyframes slide-top {
+  @-webkit-keyframes slide {
     from {
       transform: scaleY(0.4);
       transform-origin: 100% 0%;
@@ -232,7 +240,7 @@ nav button {
       transform-origin: 100% 0%;
     }
   }
-  @keyframes slide-top {
+  @keyframes slide {
     from {
       transform: scaleY(0.4);
       transform-origin: 100% 0%;
@@ -291,19 +299,23 @@ nav button {
 }
 
 .container-infos h3 {
-  margin-left: 200px;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-size: 32px;
   text-shadow: 1px 1px 2px #fff;
   font-weight: 500;
   color: #fff;
+  border-bottom: 4px solid #ffbb33;
+  max-width: 700px;
+  letter-spacing: 18px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .infos-picture img {
   width: 350px;
   height: 350px;
-  border: 1px solid #000;
+  border: 1px solid #ffbb33;
   border-radius: 50%;
   margin-left: 20px;
 }
@@ -317,6 +329,7 @@ nav button {
   font-family: "Montserrat", sans-serif;
   line-height: 1.4;
   color: #eae7e7;
+  display: block;
 }
 
 .alternatif-text {
@@ -334,11 +347,14 @@ nav button {
     border-bottom: 4px solid #ffbb33;
     font-family: "Oswald", sans-serif;
     text-transform: uppercase;
+    padding-bottom: 50px;
+    max-width: 100%;
   }
   .infos-description {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    margin-top: 100px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -901,6 +917,7 @@ textarea::placeholder {
   justify-content: center;
   background-color: #ffbb33;
   font-weight: 500;
+  border: 1px solid black;
 }
 
 textarea {
@@ -981,10 +998,4 @@ body {
 
 li {
   list-style-type: none;
-}
-
-@media screen and (max-width: 800px) {
-  .mouse-down {
-    display: none;
-  }
 }/*# sourceMappingURL=styles.css.map */
