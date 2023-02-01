@@ -5,6 +5,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row-reverse;
+    padding: 50px 0;
 }
 
 .competences-container {
@@ -12,31 +13,8 @@
     width: 100%;
 }
 
-.competences-container h3 {
-    color: #fff;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    margin: 0 auto;
-    padding: 20px 10px;
-    font-weight: 500;
-    letter-spacing: 18px;
-    font-size: 4.8em;
-    max-width: 1050px;
-    text-align: center;
-    border-bottom: 4px solid #ffbb33;
-}
-
 .competences {
     position: relative;
-}
-
-.competences-box h3 {
-    font-family: "Roboto", sans-serif;
-    font-size: 2.2em;
-    font-weight: 400;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 4px 3px #000;
 }
 
 .skills-box {
@@ -55,13 +33,14 @@
         font-weight: 600;
         font-family: "Montserrat", sans-serif;
         font-size: 25px;
+        color: #000;
     }
     .title {
         display: block;
         font-size: 17px;
         font-weight: 600;
-        color: #333;
         font-family: "Montserrat", sans-serif;
+        color: #000;
     }
     .skill-bar {
         height: 35px;
@@ -148,10 +127,6 @@
     font-family: "Montserrat", sans-serif;
 }
 
-.cv-container h3 {
-    margin-bottom: 100px;
-}
-
 @media screen and (max-width: 1299px) {
     .competences-main {
         margin-top: 50px;
@@ -161,15 +136,6 @@
     }
     .skills-box {
         width: 97%;
-        margin: 50px auto;
-    }
-    .competences-container h3 {
-        font-size: 2em;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .competences-container h3 {
-        letter-spacing: 0;
+        margin: 0 auto 50px auto;
     }
 }

@@ -20,7 +20,7 @@ const Infos = () => {
     <div id="ancre-infos" ref={targetRef} className="infos">
       <div id="target-infos"></div>
       <div className="container-infos">
-        <h3>A propos de moi </h3>
+        <h4>A propos de moi </h4>
         <div className="infos-description">
           <div ref={ref}>
             {isVisible && (

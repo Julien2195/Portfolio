@@ -7,6 +7,7 @@
 @import './contact';
 @import './timeline';
 @import './colorMode';
+@import "./footer";
 //Police
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap');
@@ -18,13 +19,42 @@ body {
 }
 
 .light-mode {
-    background-color: #fff;
+    color: black;
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
 }
 
 .dark-mode {
     background-color: #1f1f1f;
+    color: #fff;
 }
 
 li {
     list-style-type: none;
+}
+
+h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin: 0 auto;
+    padding: 0;
+    font-weight: 500;
+    letter-spacing: 18px;
+    font-size: 4.8em;
+    max-width: 1050px;
+    text-align: center;
+    border-bottom: 4px solid #ffbb33;
+}
+
+@media screen and (max-width:600px) {
+    .container-infos h4 {
+        letter-spacing: 5px;
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 2em;
+        letter-spacing: 5px;
+    }
 }

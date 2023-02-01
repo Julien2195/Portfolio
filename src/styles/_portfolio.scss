@@ -1,13 +1,15 @@
 .portfolio-container {
     height: auto;
-    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 0 100px 0;
 }
 
-.portfolio-container h2 {
-    color: #fff;
+h3 {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
-    margin: 0 auto;
+    margin: 0;
+    text-align: center;
     padding: 0 10px 50px 10px;
     font-weight: 500;
     letter-spacing: 18px;
@@ -15,6 +17,7 @@
     font-size: 4.8em;
     border-bottom: 4px solid #ffbb33;
     max-width: 1050px;
+    margin: 0 auto;
 }
 
 .slick-slide>div {
@@ -103,8 +106,5 @@
 @media screen and (max-width:600px) {
     .portfolio {
         grid-template-columns: repeat(auto-fill, 320px);
-    }
-    .portfolio-container h2 {
-        font-size: 2em;
     }
 }

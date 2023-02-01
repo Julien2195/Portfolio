@@ -8,7 +8,8 @@ form {
 
 .contact-container {
     max-width: 1050px;
-    margin: 0 auto
+    margin: 0 auto;
+    padding-bottom: 100px;
 }
 
 .box-container {
@@ -31,26 +32,12 @@ form {
     justify-content: space-between;
 }
 
-.contact h3 {
-    margin: 0;
-    padding: 50px 0;
-    color: #fff;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 500;
-    letter-spacing: 18px;
-    text-shadow: 2px 2px 2px rgb(78, 45, 45);
-    font-size: 4.8em;
-    border-bottom: 4px solid #ffbb33;
-}
-
 form input,
 textarea {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 13px;
+    margin-top: 10px;
 }
 
 input {
@@ -72,13 +59,13 @@ textarea::placeholder {
     width: 103px;
     height: 48px;
     margin: 0 auto;
-    color: #830000;
     font-size: 20px;
     justify-content: center;
     background-color: #ffbb33;
     font-weight: 500;
     border: 1px solid black;
     cursor: pointer;
+    font-family: "Roboto", 'Times New Roman';
 }
 
 textarea {
@@ -90,9 +77,8 @@ textarea {
 
 label {
     margin: 0;
-    color: #fff;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-family: "Roboto", sans-serif;
     display: flex;
 }
@@ -119,12 +105,6 @@ label {
 @media screen and (max-width: 1060px) {
     .box-container {
         justify-content: center;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .contact h3 {
-        font-size: 2em;
     }
 }
 

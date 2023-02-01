@@ -67,7 +67,7 @@ const Portfolio = () => {
   return (
     <div className="portfolio-container">
       <div id="target-portfolio"></div>
-      <h2>Portfolio</h2>
+      <h3>Portfolio</h3>
       <div className="portfolio">
         <div ref={ref}>
           {isVisiblePortfolio && (
