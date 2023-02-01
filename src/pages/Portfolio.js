@@ -1,5 +1,5 @@
 import axios from "axios";
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -63,8 +63,10 @@ const Portfolio = () => {
   useEffect(() => {
     setIsVisiblePortfolio(inView);
   }, [inView]);
+
   return (
     <div className="portfolio-container">
+      <div id="target-portfolio"></div>
       <h2>Portfolio</h2>
       <div className="portfolio">
         <div ref={ref}>

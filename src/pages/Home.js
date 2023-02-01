@@ -11,7 +11,6 @@ const Home = () => {
   return (
     <div>
       <ScrollIndicator />
-      <Navbar />
       <Header />
       <Infos />
       <Competences />

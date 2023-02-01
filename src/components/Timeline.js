@@ -41,11 +41,25 @@ const Timeline = () => {
       <Chrono
         items={items}
         mode="VERTICAL_ALTERNATING"
-        theme={{ primary: "#ffbb33" }}
+        cardHeight={140}
+        theme={{
+          primary: "#ffbb33",
+          secondary: "#ffbb33",
+          titleColor: "#fff",
+          titleColorActive: "#830000",
+          fontWeight: 500,
+        }}
         showAllCardsHorizontal={true}
         disableClickOnCircle={true}
         hideControls={true}
         timelineCircleDimension={30}
+        classNames={{
+          card: "my-card",
+          cardTitle: "my-card-title",
+          cardSubTitle: "my-card-subtitle",
+          title: "my-title",
+        }}
+        fontSizes={{ cardTitle: "17px", cardSubtitle: "14px" }}
       />
     </div>
   );

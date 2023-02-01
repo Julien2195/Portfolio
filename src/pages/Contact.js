@@ -27,13 +27,14 @@ const Contact = () => {
   };
   return (
     <div className="contact">
+      <div id="target-contact"></div>
       <div className="contact-container">
         <h3>Contact</h3>
         <form ref={form} onSubmit={sendEmail}>
           <div className="box-container">
             <div className="box-un">
               <div>
-                <label>
+                <label className="container-box-un">
                   <FaUserAlt className="colorContactIcon" />
                   Nom et prenom
                 </label>

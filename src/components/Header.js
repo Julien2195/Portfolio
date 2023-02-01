@@ -15,21 +15,23 @@ const Header = () => {
 
   return (
     <header>
-      <div className="overlay">
-        <video src={videobg} autoPlay loop muted />
-        <div className="videobg-container">
-          <TypeAnimation
-            sequence={[
-              "Actuellement à la recherche d'une alternance développeur d'application React",
-            ]}
-            speed={30}
-            cursor={true}
-            repeat={0}
-            className={"custom-typing"}
-          />
-        </div>
+      <div className="header">
+        <div className="overlay">
+          <video src={videobg} autoPlay loop muted />
+          <div className="videobg-container">
+            <TypeAnimation
+              sequence={[
+                "Actuellement à la recherche d'une alternance développeur d'application React",
+              ]}
+              speed={30}
+              cursor={true}
+              repeat={0}
+              className={"custom-typing"}
+            />
+          </div>
 
-        <CgMouse onClick={handleClick} className="mouse-down" />
+          <CgMouse onClick={handleClick} className="mouse-down" />
+        </div>
       </div>
     </header>
   );

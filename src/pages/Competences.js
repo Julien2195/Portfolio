@@ -70,6 +70,7 @@ const Competences = () => {
       percent: 65,
     },
   ];
+
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView({
     threshold: 0,
@@ -81,6 +82,7 @@ const Competences = () => {
   }, [inView]);
   return (
     <div className="competences-container">
+      <div id="target-competences"></div>
       <h3>Compétences</h3>
       <div className="competences-main" ref={ref}>
         {isVisible && (
