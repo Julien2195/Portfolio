@@ -1,5 +1,6 @@
 import axios from "axios";
-import { React, useState, useEffect, useRef } from "react";
+import { React, useState, useEffect } from "react";
+import { FaTimes } from "react-icons/fa";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -64,44 +65,74 @@ const Portfolio = () => {
     setIsVisiblePortfolio(inView);
   }, [inView]);
 
-  return (
-    <div className="portfolio-container">
-      <div id="target-portfolio"></div>
-      <h3>Portfolio</h3>
-      <div className="portfolio">
-        <div ref={ref}>
-          {isVisiblePortfolio && (
-            <div
-              data-aos="zoom-in"
-              data-aos-easing="ease-in-out"
-              data-aos-once="true"
-              data-aos-duration="700"
-            >
-              <Slider {...settings}>
-                {data.map((x) => (
-                  <div key={x.id} className="portfolio-box">
-                    <div className="overlay-image">
-                      <div className="block">
-                        <img src={x.img} alt="" />
-                      </div>
-                      <div className="hover">
-                        <div className="tags-container">
-                          {x.tags.map((tag, i) => (
-                            <span className="tags" key={i}>{`#${tag}`}</span>
-                          ))}
-                        </div>
+  const [portfolioIsActive, setPortfolioIsActive] = useState(false);
+  const [selectedData, setSelectedData] = useState(false);
 
-                        <h3>{x.name}</h3>
+  return (
+    <>
+      {portfolioIsActive && selectedData && (
+        <div className="selected-data-container">
+          <div className="container-portfolio-infos">
+            <div className="container-titre-infos">
+              <FaTimes className="closed-portfolio" />
+              <h5 className="title-portfolio">{selectedData.name}</h5>
+            </div>
+            <img src={selectedData.img} className="image-infos-portfolio" />
+            <div className="container-portfolio-description">
+              {selectedData.tags.map((tag, i) => (
+                <span className="tags" key={i}>{`#${tag}`}</span>
+              ))}
+              <h5 className="description-portfolio">Description:</h5>
+              <div className="description-box">{selectedData.description}</div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="portfolio-container">
+        <div id="target-portfolio"></div>
+        <h3>Portfolio</h3>
+        <div className="portfolio">
+          <div ref={ref}>
+            {isVisiblePortfolio && (
+              <div
+                data-aos="zoom-in"
+                data-aos-easing="ease-in-out"
+                data-aos-once="true"
+                data-aos-duration="700"
+              >
+                <Slider {...settings}>
+                  {data.map((x) => (
+                    <div key={x.id} className="portfolio-box">
+                      <div className="overlay-image">
+                        <div className="block">
+                          <img src={x.img} alt="" />
+                        </div>
+                        <div
+                          className="hover"
+                          onClick={() => {
+                            setPortfolioIsActive(!portfolioIsActive);
+                            setSelectedData(x);
+                          }}
+                        >
+                          <div className="tags-container">
+                            {x.tags.map((tag, i) => (
+                              <span className="tags" key={i}>{`#${tag}`}</span>
+                            ))}
+                          </div>
+
+                          <h5>{x.name}</h5>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          )}
+                  ))}
+                </Slider>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

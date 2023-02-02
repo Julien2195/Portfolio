@@ -1,6 +1,12 @@
 .cv-container {
     width: 650px;
     height: auto;
+    padding: 0;
+}
+
+#timeline-main-wrapper,
+.timeline-verticalstyles__TimelineVerticalWrapper-sc-1427v1d-0 {
+    padding: 0 !important;
 }
 
 .rc-card header {
@@ -9,6 +15,7 @@
 
 .my-card {
     margin: 0 10px;
+    background: none !important;
 }
 
 .my-title {
@@ -28,6 +35,11 @@
     z-index: 0!important;
 }
 
+.PTgig,
+.fOkrKD {
+    background-color: transparent!important;
+}
+
 @media screen and (max-width: 1299px) {
     .cv-container {
         margin: 0 auto;
@@ -39,10 +51,7 @@
 @media screen and (max-width: 667px) {
     .cv-container {
         width: 100%;
-    }
-    .jMzAUM,
-    .bmWkrx {
-        padding: 0!important;
+        padding: 0;
     }
 }
 
@@ -50,9 +59,9 @@
     .my-card {
         margin: 0;
     }
-    .PTgig,
-    .fOkrKD {
-        background-color: transparent!important;
+    .gPNbFw,
+    .UqFpn {
+        display: none !important;
     }
     .my-card-subtitle {
         font-size: 12px!important;

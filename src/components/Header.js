@@ -1,16 +1,15 @@
-import { useRef, useState, useEffect } from "react";
-import { CgMouse } from "react-icons/cg";
-import videobg from "../assets/videobg2.mp4";
+import { useRef, useEffect } from "react";
+import videobg from "../assets/videobg3.mp4";
 import { TypeAnimation } from "react-type-animation";
-
+import { HiArrowCircleDown } from "react-icons/hi";
 const Header = () => {
-  const targetRef = useRef(null);
-  function handleClick() {
-    targetRef.current.scrollIntoView({ behavior: "smooth" });
+  const targetRefDown = useRef(null);
+  function handleClickDown() {
+    targetRefDown.current.scrollIntoView({ behavior: "smooth" });
   }
 
   useEffect(() => {
-    targetRef.current = document.getElementById("target");
+    targetRefDown.current = document.getElementById("target-infos");
   }, []);
 
   return (
@@ -21,16 +20,20 @@ const Header = () => {
           <div className="videobg-container">
             <TypeAnimation
               sequence={[
-                "Actuellement à la recherche d'une alternance développeur d'application React",
+                "Bienvenue sur mon portfolio.", // Types 'One'
+                1000, // Waits 1s
+                "Welcome to my portfolio.", // Deletes 'One' and types 'Two'
+                2000, // Waits 2s
               ]}
               speed={30}
+              wrapper="div"
               cursor={true}
-              repeat={0}
+              repeat={Infinity}
               className={"custom-typing"}
             />
           </div>
 
-          <CgMouse onClick={handleClick} className="mouse-down" />
+          <HiArrowCircleDown onClick={handleClickDown} className="mouse-down" />
         </div>
       </div>
     </header>

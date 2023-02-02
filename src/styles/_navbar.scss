@@ -7,7 +7,6 @@
     }
     
     .navbar.active {
-        background-color: rgb(0, 0, 0);
         animation: slide-top 0.5s forwards;
         display: block;
     }
@@ -40,16 +39,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #fff;
         cursor: pointer;
     }
     
     .active-border {
         border-bottom: 1px solid yellow;
-    }
-    
-    .nav-item.active {
-        color: blue;
     }
     
     .name-item {
@@ -58,7 +52,6 @@
     
     nav button {
         display: none;
-        color: #fff;
     }
     
     @media screen and (max-width: 1100px) {
@@ -78,7 +71,6 @@
         .container-responsive {
             position: absolute;
             display: block;
-            background-color: #000;
             left: 0;
             top: 80px;
             animation: slide 0.3s forwards;

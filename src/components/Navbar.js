@@ -76,6 +76,9 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             <li className="responsive-menu" onClick={handleClick4}>
               Contact
             </li>
+            <li>
+              <ColorMode darkMode={darkMode} setDarkMode={setDarkMode} />
+            </li>
           </div>
         ) : (
           ""

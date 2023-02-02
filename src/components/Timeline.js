@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Chrono } from "react-chrono";
+import { useInView } from "react-intersection-observer";
+import "aos/dist/aos.css";
+import AOS from "aos";
 const Timeline = () => {
   const items = [
     {
@@ -35,32 +38,52 @@ const Timeline = () => {
       cardDetailedText: ``,
     },
   ];
-
+  const [timelineIsVisible, timelineSetIsVisible] = useState(false);
+  const [ref, inView] = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+  AOS.init();
+  useEffect(() => {
+    timelineSetIsVisible(inView);
+  }, [inView]);
   return (
-    <div>
-      <Chrono
-        items={items}
-        mode="VERTICAL_ALTERNATING"
-        cardHeight={140}
-        theme={{
-          primary: "#ffbb33",
-          secondary: "#ffbb33",
-          titleColor: "#fff",
-          titleColorActive: "#830000",
-          fontWeight: 500,
-        }}
-        showAllCardsHorizontal={true}
-        disableClickOnCircle={true}
-        hideControls={true}
-        timelineCircleDimension={30}
-        classNames={{
-          card: "my-card",
-          cardTitle: "my-card-title",
-          cardSubTitle: "my-card-subtitle",
-          title: "my-title",
-        }}
-        fontSizes={{ cardTitle: "17px", cardSubtitle: "14px" }}
-      />
+    <div
+      className="aos-flip"
+      data-aos="zoom-in"
+      data-aos-duration="500"
+      data-aos-easing="ease-in-out"
+      data-aos-once="true"
+    >
+      <div ref={ref}>
+        {timelineIsVisible && (
+          <Chrono
+            items={items}
+            mode="VERTICAL_ALTERNATING"
+            cardHeight={140}
+            theme={{
+              primary: "#ffbb33",
+              secondary: "#ffbb33",
+              titleColor: "#fff",
+              titleColorActive: "#830000",
+              fontWeight: 500,
+            }}
+            showAllCardsHorizontal={true}
+            disableClickOnCircle={true}
+            hideControls={true}
+            timelineCircleDimension={30}
+            classNames={{
+              card: "my-card no-padding",
+              cardTitle: "my-card-title",
+              cardSubTitle: "my-card-subtitle",
+              title: "my-title",
+            }}
+            fontSizes={{ cardTitle: "17px", cardSubtitle: "14px" }}
+          >
+            <div></div>
+          </Chrono>
+        )}
+      </div>
     </div>
   );
 };

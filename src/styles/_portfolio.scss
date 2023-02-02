@@ -5,23 +5,8 @@
     padding: 0 0 100px 0;
 }
 
-h3 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    margin: 0;
-    text-align: center;
-    padding: 0 10px 50px 10px;
-    font-weight: 500;
-    letter-spacing: 18px;
-    text-shadow: 2px 2px 2px rgb(78, 45, 45);
-    font-size: 4.8em;
-    border-bottom: 4px solid #ffbb33;
-    max-width: 1050px;
-    margin: 0 auto;
-}
-
 .slick-slide>div {
-    margin: 0 10px;
+    margin: 0 30px;
 }
 
 .slick-list {
@@ -74,23 +59,25 @@ h3 {
     flex-direction: column;
 }
 
-.hover h3 {
+.hover h5 {
     color: #fff;
     font-weight: 400;
     font-size: 30px;
     margin: 0;
     font-family: 'Oswald', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .tags-container {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
+    text-align: center;
 }
 
 .tags {
     font-family: 'Oswald', sans-serif;
-    padding-right: 5px;
+    padding-left: 5px;
     color: white;
     font-style: normal;
     font-size: 18px;
@@ -101,6 +88,74 @@ h3 {
 .slick-dots li button:before {
     font-size: 16px;
     color: #fff;
+}
+
+///////////////////////////////////////////////////////////////////////
+.selected-data-container {
+    background-color: #141414;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 1;
+    animation: slide-right 0.5s forwards;
+    padding: 30px;
+}
+
+.container-titre-infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.container-portfolio-infos {
+    margin-top: 120px;
+}
+
+.title-portfolio {
+    text-align: end;
+    font-family: "Open sans", sans-serif;
+    padding-right: 20px;
+    font-size: 34px;
+    margin: 0;
+}
+
+.container-portfolio-description {
+    margin-top: 20px;
+}
+
+.description-portfolio {
+    text-align: center;
+    font-family: "Open sans", sans-serif;
+    font-size: 34px;
+}
+
+.description-box {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.closed-portfolio {
+    font-size: 34px;
+}
+
+.image-infos-portfolio {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+
+@keyframes slide-right {
+    from {
+        transform: scaleX(0.4);
+        transform-origin: 100% 0%;
+    }
+    to {
+        transform: scaleX(1);
+        transform-origin: 100% 0%;
+    }
 }
 
 @media screen and (max-width:600px) {
