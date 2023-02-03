@@ -1,3 +1,4 @@
+import { logDOM } from "@testing-library/react";
 import React, { useState, useEffect, useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import ColorMode from "./ColorMode";
@@ -37,7 +38,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   /////////////////////////////////////////////
   const [navBar, setNavBar] = useState(false);
   const [isActive, setIsActive] = useState(false);
-
+  const [isClosing, setIsClosing] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= 10) {
       setNavBar(true);
@@ -59,11 +60,15 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           <li onClick={handleClick4}>Contact</li>
           <ColorMode darkMode={darkMode} setDarkMode={setDarkMode} />
         </ul>
-        <button onClick={() => setIsActive(!isActive)}>
+        <button
+          onClick={() => {
+            setIsActive(!isActive);
+          }}
+        >
           {isActive ? <FaTimes /> : <FaBars />}
         </button>
         {isActive ? (
-          <div className="container-responsive">
+          <div className={`container-responsive active`}>
             <li className="responsive-menu" onClick={handleClick}>
               A propos de moi
             </li>
@@ -81,7 +86,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             </li>
           </div>
         ) : (
-          ""
+          <div className={`container-responsive closing`}></div>
         )}
       </div>
     </nav>

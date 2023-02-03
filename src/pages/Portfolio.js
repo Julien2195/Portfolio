@@ -89,8 +89,12 @@ const Portfolio = () => {
               {selectedData.tags.map((tag, i) => (
                 <span className="tags" key={i}>{`#${tag}`}</span>
               ))}
-              <h5 className="description-portfolio">Description:</h5>
-              <div className="description-box">{selectedData.description}</div>
+              <div className="description-portfolio">
+                <h5>Description:</h5>
+              </div>
+              <div className="description-box">
+                <p>{selectedData.description}</p>
+              </div>
             </div>
           </div>
         </div>

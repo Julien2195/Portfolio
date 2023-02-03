@@ -72,8 +72,14 @@
             display: block;
             left: 0;
             top: 80px;
-            animation: slide 0.3s forwards;
             width: 100%;
+        }
+        .container-responsive.active {
+            animation: slide 0.3s forwards;
+        }
+        .container-responsive.closing {
+            animation: slide 0.3s forwards;
+            animation-direction: reverse;
         }
         @keyframes slide {
             from {
