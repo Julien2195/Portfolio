@@ -7,6 +7,7 @@ import Competences from "./Competences";
 import Infos from "./Infos";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import SoftSkills from "../components/SoftSkills";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Header />
       <Infos />
       <Competences />
+      <SoftSkills />
       <Portfolio />
       <Contact />
       <Footer />

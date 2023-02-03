@@ -66,15 +66,22 @@ const Portfolio = () => {
   }, [inView]);
 
   const [portfolioIsActive, setPortfolioIsActive] = useState(false);
+
   const [selectedData, setSelectedData] = useState(false);
 
   return (
     <>
-      {portfolioIsActive && selectedData && (
-        <div className="selected-data-container">
+      {selectedData && portfolioIsActive && (
+        <div className="selected-data-container active">
           <div className="container-portfolio-infos">
             <div className="container-titre-infos">
-              <FaTimes className="closed-portfolio" />
+              <FaTimes
+                className="closed-portfolio"
+                onClick={() => {
+                  setPortfolioIsActive(portfolioIsActive);
+                }}
+              />
+
               <h5 className="title-portfolio">{selectedData.name}</h5>
             </div>
             <img src={selectedData.img} className="image-infos-portfolio" />
