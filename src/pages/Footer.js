@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className="footer-container">
         <ul>
-          <li>
+          <li className="linkedin">
             <Link
               to={{
                 pathname:
@@ -21,7 +21,7 @@ const Footer = () => {
             to={{ pathname: "https://github.com/Julien2195" }}
             target="_blank"
           >
-            <li>
+            <li className="github">
               <BsGithub />
             </li>
           </Link>

@@ -67,27 +67,25 @@ const Navbar = ({ darkMode, setDarkMode }) => {
         >
           {isActive ? <FaTimes /> : <FaBars />}
         </button>
-        {isActive ? (
-          <div className={`container-responsive active`}>
-            <li className="responsive-menu" onClick={handleClick}>
-              A propos de moi
-            </li>
-            <li className="responsive-menu" onClick={handleClick2}>
-              Compétences
-            </li>
-            <li className="responsive-menu" onClick={handleClick3}>
-              Portfolio
-            </li>
-            <li className="responsive-menu" onClick={handleClick4}>
-              Contact
-            </li>
-            <li>
-              <ColorMode darkMode={darkMode} setDarkMode={setDarkMode} />
-            </li>
-          </div>
-        ) : (
-          <div className={`container-responsive closing`}></div>
-        )}
+        <div
+          className={`container-responsive ${isActive ? "active" : "closing"}`}
+        >
+          <li className="responsive-menu" onClick={handleClick}>
+            A propos de moi
+          </li>
+          <li className="responsive-menu" onClick={handleClick2}>
+            Compétences
+          </li>
+          <li className="responsive-menu" onClick={handleClick3}>
+            Portfolio
+          </li>
+          <li className="responsive-menu" onClick={handleClick4}>
+            Contact
+          </li>
+          <li>
+            <ColorMode darkMode={darkMode} setDarkMode={setDarkMode} />
+          </li>
+        </div>
       </div>
     </nav>
   );

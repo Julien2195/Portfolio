@@ -6,6 +6,10 @@
         z-index: 20;
     }
     
+    .container-responsive {
+        display: none;
+    }
+    
     .navbar.active {
         animation: slide-top 0.5s forwards;
         display: block;
@@ -73,13 +77,16 @@
             left: 0;
             top: 80px;
             width: 100%;
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-in-out;
         }
-        .container-responsive.active {
-            animation: slide 0.3s forwards;
+        .active {
+            max-height: 500px;
         }
-        .container-responsive.closing {
-            animation: slide 0.3s forwards;
-            animation-direction: reverse;
+        .closing {
+            max-height: 0;
+            transition: max-height 0.3s ease-in-out;
         }
         @keyframes slide {
             from {

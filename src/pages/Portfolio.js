@@ -66,39 +66,44 @@ const Portfolio = () => {
   }, [inView]);
 
   const [portfolioIsActive, setPortfolioIsActive] = useState(false);
-
   const [selectedData, setSelectedData] = useState(false);
-
+  const [horizontalScroll, setHorizontalScroll] = useState(false);
+  horizontalScroll
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "auto");
   return (
-    <>
-      {selectedData && portfolioIsActive && (
-        <div className="selected-data-container active">
-          <div className="container-portfolio-infos">
-            <div className="container-titre-infos">
-              <FaTimes
-                className="closed-portfolio"
-                onClick={() => {
-                  setPortfolioIsActive(portfolioIsActive);
-                }}
-              />
+    <div>
+      <div
+        className={`selected-data-container ${
+          selectedData && portfolioIsActive ? "active" : "closed"
+        }`}
+      >
+        <div className="container-portfolio-infos">
+          <div className="container-titre-infos">
+            <FaTimes
+              className="closed-portfolio"
+              onClick={() => {
+                setPortfolioIsActive(!portfolioIsActive);
+              }}
+            />
 
-              <h5 className="title-portfolio">{selectedData.name}</h5>
-            </div>
-            <img src={selectedData.img} className="image-infos-portfolio" />
-            <div className="container-portfolio-description">
-              {selectedData.tags.map((tag, i) => (
+            <h5 className="title-portfolio">{selectedData.name}</h5>
+          </div>
+          <img src={selectedData.img} className="image-infos-portfolio" />
+          <div className="container-portfolio-description">
+            {selectedData &&
+              selectedData.tags.map((tag, i) => (
                 <span className="tags" key={i}>{`#${tag}`}</span>
               ))}
-              <div className="description-portfolio">
-                <h5>Description:</h5>
-              </div>
-              <div className="description-box">
-                <p>{selectedData.description}</p>
-              </div>
+            <div className="description-portfolio">
+              <h5>Description:</h5>
+            </div>
+            <div className="description-box">
+              <p>{selectedData.description}</p>
             </div>
           </div>
         </div>
-      )}
+      </div>
 
       <div className="portfolio-container">
         <div id="target-portfolio"></div>
@@ -123,6 +128,7 @@ const Portfolio = () => {
                           className="hover"
                           onClick={() => {
                             setPortfolioIsActive(!portfolioIsActive);
+                            setHorizontalScroll(!horizontalScroll);
                             setSelectedData(x);
                           }}
                         >
@@ -143,7 +149,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

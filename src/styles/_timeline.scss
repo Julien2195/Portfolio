@@ -36,6 +36,11 @@
     background-color: transparent!important;
 }
 
+.gPNbFw,
+.UqFpn {
+    display: none !important;
+}
+
 @media screen and (max-width: 1299px) {
     .cv-container {
         margin: 0 auto;
@@ -54,10 +59,6 @@
 @media screen and (max-width: 500px) {
     .my-card {
         margin: 0;
-    }
-    .gPNbFw,
-    .UqFpn {
-        display: none !important;
     }
     .my-card-subtitle {
         font-size: 12px!important;
