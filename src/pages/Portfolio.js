@@ -75,7 +75,7 @@ const Portfolio = () => {
     <div>
       <div
         className={`selected-data-container ${
-          selectedData && portfolioIsActive ? "active" : "closed"
+          selectedData && portfolioIsActive ? "actived" : "closed"
         }`}
       >
         <div className="container-portfolio-infos">
@@ -84,6 +84,7 @@ const Portfolio = () => {
               className="closed-portfolio"
               onClick={() => {
                 setPortfolioIsActive(!portfolioIsActive);
+                setHorizontalScroll(!horizontalScroll);
               }}
             />
 
