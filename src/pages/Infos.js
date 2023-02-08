@@ -20,29 +20,20 @@ const Infos = () => {
     <div id="ancre-infos" ref={targetRef} className="infos">
       <div id="target-infos"></div>
       <div className="container-infos">
-        <h4>A propos de moi </h4>
+        <h4>Qui suis je ?</h4>
         <div className="infos-description">
           <div ref={ref}>
-            {isVisible && (
-              <TypeAnimation
-                speed={60}
-                repeat={0}
-                style={{ maxWidth: 700, textAlign: "justify" }}
-                sequence={[
-                  "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla.",
-                ]}
-              />
-            )}
-            <p className="alternatif-text">
-              Le Lorem Ipsum est simplement du faux texte employé dans la
-              composition et la mise en page avant impression. Le Lorem Ipsum
-              est le faux texte standard de l'imprimerie depuis les années 1500,
-              quand un imprimeur anonyme assembla ensemble des morceaux de texte
-              pour réaliser un livre spécimen de polices de texte. Le Lorem
-              Ipsum est simplement du faux texte employé dans la composition et
-              la mise en page avant impression. Le Lorem Ipsum est le faux texte
-              standard de l'imprimerie depuis les années 1500, quand un
-              imprimeur anonyme assembla.
+            <p>
+              Bonjour, <br />
+              je suis Julien, développeur web junior! Après avoir travaillé dans
+              différents domaines, j'ai décidé d'entreprendre une reconversion
+              professionnelle. <br />
+              D'abord en autodidacte pour apprendre le html/css j'ai poursuivi
+              sur une formation développeur web RNCP 5 avec Openclassrooms.
+              <br />
+              Suite à l'obtention de ce diplôme je souhaite maintenant
+              poursuivre mes études en tant que développeur d'application web
+              React !
             </p>
           </div>
           <div className="infos-picture">

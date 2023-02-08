@@ -16,7 +16,6 @@ const Home = () => {
       <Header />
       <Infos />
       <Competences />
-      <SoftSkills />
       <Portfolio />
       <Contact />
       <Footer />

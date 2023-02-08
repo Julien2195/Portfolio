@@ -1,11 +1,10 @@
 .competences-main {
     display: flex;
     max-width: 1500px;
-    margin: 100px auto 0 auto;
+    margin: 100px auto 30px auto;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    padding: 50px 0;
 }
 
 .competences-container {
@@ -57,29 +56,32 @@
     }
 }
 
-.skill-per.html,
-.css {
+.skill-per.html {
     width: 90%;
 }
 
+.skill-per.css {
+    width: 85%;
+}
+
 .skill-per.javascript {
-    width: 70%;
+    width: 65%;
 }
 
 .skill-per.react {
-    width: 65%;
+    width: 60%;
 }
 
 .skill-per.wordpress {
-    width: 50%;
+    width: 85%;
 }
 
-.skill-per.nodejs {
-    width: 70%;
+.skill-per.node {
+    width: 60%;
 }
 
 .skill-per.express {
-    width: 65%;
+    width: 60%;
 }
 
 .skill-per.php {
@@ -131,7 +133,13 @@
         width: 100%;
     }
     .skills-box {
-        width: 97%;
+        width: 700px;
         margin: 0 auto 50px auto;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .skills-box {
+        width: 100%;
     }
 }

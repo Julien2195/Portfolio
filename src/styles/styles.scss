@@ -20,6 +20,10 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 .light-mode {
     background-color: #f5f6f8;
     color: #322e2b;
@@ -37,7 +41,9 @@ body {
         border-left: 1px solid rgba(0, 0, 0, 0.1);
     }
     .enbUwa,
-    .bCbFZb {
+    .bCbFZb,
+    .bOjNhg,
+    .doLIvy {
         color: #000 !important;
     }
 }
@@ -49,21 +55,23 @@ body {
     .container-responsive {
         background-color: #000;
     }
-    button {
-        color: white;
-    }
     .selected-data-container {
         border-left: 1px solid hsl(0deg 0% 100% / 10%);
     }
-    .hNseIN {
+    .hNseIN,
+    .hBuCAJ,
+    .bOjNhg,
+    .doLIvy,
+    button {
         color: #fff !important;
     }
     .skills-box {
         color: #000;
     }
-    .hBuCAJ {
-        color: #fff !important;
-    }
+}
+
+.hyTxSy {
+    color: #fff !important;
 }
 
 li {
@@ -88,7 +96,6 @@ span,
 li,
 button,
 label,
-a,
 h1,
 h4 {
     font-family: "Poppins", sans-serif;

@@ -8,23 +8,15 @@ const Footer = () => {
       <div className="footer-container">
         <ul>
           <li className="linkedin">
-            <Link
-              to={{
-                pathname:
-                  "https://www.linkedin.com/in/julien-lemaitre-b119a224a/",
-              }}
-              target="_blank"
-            ></Link>
-            <BsLinkedin />
+            <a href="https://www.linkedin.com/in/julien-lemaitre-b119a224a/">
+              <BsLinkedin />
+            </a>
           </li>
-          <Link
-            to={{ pathname: "https://github.com/Julien2195" }}
-            target="_blank"
-          >
-            <li className="github">
+          <li className="github">
+            <a href="https://github.com/Julien2195">
               <BsGithub />
-            </li>
-          </Link>
+            </a>
+          </li>
         </ul>
         <span>© 2023 Julien LEMAITRE, Tous droits réservés.</span>
       </div>

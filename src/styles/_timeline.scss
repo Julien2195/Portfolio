@@ -23,10 +23,6 @@
     font-family: "Poppins", sans-serif;
 }
 
-.my-card-subtitle {
-    color: #666!important;
-}
-
 .jrTOtH {
     z-index: 0!important;
 }
@@ -41,15 +37,27 @@
     display: none !important;
 }
 
+.button-cv {
+    text-align: center;
+    width: 200px;
+    background-color: #ffbb33;
+    padding: 10px;
+    margin: 85px auto 0 auto;
+    color: #000;
+    font-size: 22px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+}
+
 @media screen and (max-width: 1299px) {
     .cv-container {
         margin: 0 auto;
-        margin-bottom: 80px;
-        width: 100%;
+        width: 700px;
     }
 }
 
-@media screen and (max-width: 667px) {
+@media screen and (max-width: 736px) {
     .cv-container {
         width: 100%;
         padding: 0;
@@ -66,5 +74,8 @@
     .doLIvy {
         padding: 0 10px!important;
         width: auto!important;
+    }
+    .button-cv {
+        margin: 70px auto 20px auto;
     }
 }

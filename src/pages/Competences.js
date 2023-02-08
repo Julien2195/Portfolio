@@ -13,61 +13,39 @@ const Competences = () => {
     {
       id: 2,
       name: "CSS",
-      percent: 90,
+      percent: 85,
     },
     {
       id: 3,
       name: "JAVASCRIPT",
-      percent: 70,
+      percent: 65,
     },
     {
       id: 4,
       name: "REACT",
-      percent: 65,
+      percent: 60,
     },
     {
       id: 5,
       name: "WORDPRESS",
-      percent: 50,
+      percent: 85,
     },
   ];
   const nameCompetencesBack = [
     {
       id: 1,
       name: "NODE",
-      percent: 70,
+      percent: 60,
     },
     {
       id: 2,
       name: "EXPRESS",
-      percent: 65,
+      percent: 60,
     },
     {
       id: 3,
       name: "PHP",
       percent: 30,
-    },
-  ];
-  const nameCompetencesSoft = [
-    {
-      id: 1,
-      name: "HTML",
-      percent: 90,
-    },
-    {
-      id: 2,
-      name: "CSS",
-      percent: 90,
-    },
-    {
-      id: 3,
-      name: "JAVASCRIPT",
-      percent: 70,
-    },
-    {
-      id: 4,
-      name: "REACT",
-      percent: 65,
     },
   ];
 

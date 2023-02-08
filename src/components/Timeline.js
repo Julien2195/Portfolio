@@ -1,41 +1,46 @@
 import React, { useState, useEffect } from "react";
 import { Chrono } from "react-chrono";
 import { useInView } from "react-intersection-observer";
+import curriculum from "../assets/CV_Lemaitre_Julien.pdf";
 import "aos/dist/aos.css";
 import AOS from "aos";
 const Timeline = () => {
   const items = [
     {
-      title: "Septembre 2022",
+      title: "2022",
       cardTitle: "Reconversion developpeur web",
-      cardSubtitle:
-        "Reconversion développeur web avec l'organisme Openclassrooms.",
+      cardSubtitle: `Reconversion développeur web avec l'organisme Openclassrooms.`,
       cardDetailedText: ``,
     },
+
     {
-      title: "Aout 2021",
-      cardTitle: "Food truck au Mexique",
-      cardSubtitle:
-        "Ouverture d'un food truck à Cancun au Mexique. Projet qui aura duré 6 mois. ",
-      cardDetailedText: ``,
-    },
-    {
-      title: "Octobre 2020",
+      title: "2021-2022",
       cardTitle: "Visa vacance travail Australie",
-      cardSubtitle: `10 mois en australie qui m'auront permis d'améliorer mon anglais ainsi que de travailler dans plusieurs domaines de manutention `,
-      cardDetailedText: ``,
+      cardSubtitle: ` `,
+      cardDetailedText: `Le programme PVT m'aura permis de découvrir une nouvelle culture, des personnes
+      du monde entier, d'apprendre l'anglais et de débloquer de nouveaux soft skills tel que
+      l'entraide, savoir prendre des décisions et l'autonomie.
+      Travail dans les fermes, parqueteur, couvreur et travail dans le bâtiment`,
     },
     {
-      title: "Septembre 2017",
+      title: "2018-2021",
       cardTitle: "Boucher",
-      cardSubtitle: `Préparation d'un Cap boucher ou j'aurai eu l'occasion de travailler 3 ans dans une boucherie.`,
-      cardDetailedText: ``,
+      cardSubtitle: ``,
+      cardDetailedText: `Découpe, préparation et mise en vente.
+      Commerçant et conseils culinaires.
+      Respects des règles de sécurité et de la chaine du froid`,
     },
     {
-      title: "Avril 2014",
+      title: "201-2018",
       cardTitle: "Armée de terre",
-      cardSubtitle: `Spécialisé dans l'artillerie, nottement sur les mortiers 120 et canon CAESAR j'ai éfféctué une mission en Côte d'ivoire et 5 sentinelles `,
-      cardDetailedText: ``,
+      cardSubtitle: ``,
+      cardDetailedText: `Spécialisé dans l'artillerie sur les mortiers 120 mm et sur les canons CAESAR en tant
+      qu'artificier.
+      Mission de 5 mois en Côte d'Ivoire dans le but de faire des entrainements, de former
+      les forces Ivoiriennes et de faire de l'humanitaire dans tout le pays.
+      Opération Sentinelles qui consiste à protéger les points sensibles en France. J'ai été
+      déployé à Lyon, Paris, Marseille x2, Pau et Bayonne.
+      `,
     },
   ];
   const [timelineIsVisible, timelineSetIsVisible] = useState(false);
@@ -68,7 +73,7 @@ const Timeline = () => {
               titleColorActive: "#830000",
               fontWeight: 500,
             }}
-            showAllCardsHorizontal={true}
+            showAllCardsHorizontal={false}
             disableClickOnCircle={true}
             hideControls={true}
             timelineCircleDimension={30}
@@ -84,6 +89,9 @@ const Timeline = () => {
           </Chrono>
         )}
       </div>
+      <a href={curriculum} download>
+        <div className="button-cv">Télecharge mon CV</div>
+      </a>
     </div>
   );
 };

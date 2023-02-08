@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
-import videobg from "../assets/videobg3.mp4";
+import videobgMp4 from "../assets/videobg3.mp4";
+import videobgWebm from "../assets/videobg3.webm";
 import { TypeAnimation } from "react-type-animation";
 import { HiArrowCircleDown } from "react-icons/hi";
 const Header = () => {
@@ -16,7 +17,10 @@ const Header = () => {
     <header>
       <div className="header">
         <div className="overlay">
-          <video src={videobg} autoPlay loop muted />
+          <video autoPlay loop muted>
+            <source src={videobgWebm} type="video/webm" />
+            <source src={videobgMp4} type="video/mp4" />
+          </video>
           <div className="videobg-container">
             <TypeAnimation
               sequence={[
